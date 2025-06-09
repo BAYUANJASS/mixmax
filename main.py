@@ -29,11 +29,14 @@ bot_token = os.getenv("BOT_TOKEN")
 SHEET_ID = os.getenv("SHEET_ID")
 LIMIT_PATH = pathlib.Path("./limit_rekening.json")
 
-# Load kredensial
-credentials = service_account.Credentials.from_service_account_file(
-    "telegram-bot-460011-cd82656b7a6a.json",
-    scopes=['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
+import json
+
+credentials_info = json.loads(os.getenv("GOOGLE_CREDENTIALS_JSON"))
+credentials = service_account.Credentials.from_service_account_info(
+    credentials_info,
+    scopes=["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 )
+
 service = build('sheets', 'v4', credentials=credentials)
 
 # Logging
