@@ -14,6 +14,12 @@ import gspread
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
+from dotenv import load_dotenv
+import pathlib
+
+dotenv_path = pathlib.Path('.env')
+load_dotenv(dotenv_path=dotenv_path, override=True)  # <== Tambahin override=True
+
 
 # ========== KONFIG ========== #
 cloudinary.config(
