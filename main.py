@@ -32,7 +32,7 @@ dotenv_path = pathlib.Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 bot_token = "7725649239:AAFW9fFALpk1IHA02X8HyvxKwyRKVeGXtco"
-SHEET_ID = os.getenv("16mhxrtEhy0_SNqWUWrXuXP6ZanqxzUsMpcy3k3rSQXc")
+SHEET_ID = os.getenv("SHEET_ID")
 LIMIT_PATH = pathlib.Path("./limit_rekening.json")
 
 import json
