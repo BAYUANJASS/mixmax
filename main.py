@@ -31,7 +31,8 @@ LIMIT_PATH = pathlib.Path("./limit_rekening.json")
 
 import json
 
-credentials_info = json.loads(os.getenv("GOOGLE_CREDENTIALS_JSON"))
+with open("/root/telegram-bot-460011-cd82656b7a6a.json") as f:
+    credentials_info = json.load(f)
 credentials = service_account.Credentials.from_service_account_info(
     credentials_info,
     scopes=["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
